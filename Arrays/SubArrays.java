@@ -1,4 +1,4 @@
-package Arrays;
+
 
 public class SubArrays {
     // brute force time complexity(n^3)
