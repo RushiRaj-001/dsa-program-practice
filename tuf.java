@@ -61,25 +61,76 @@
 //     }
 // }
 
-public class test {
+// public class test {
 
-    public static void main(String[] args) {
-        String str1 = "nitin";
-        String str2 = str1.toLowerCase();
-        char len[] = str2.toCharArray();
-        boolean a = true;
-        for (int i = 0; i < len.length; i++) {
-            for (int j = len.length - 1; j > 0; j--) {
-                if (len[i] == len[j]) {
-                    a = false;
-                    break;
-                }
-            }
-        }
-        if (a) {
-            System.out.println("word is palindrome");
-        } else {
-            System.out.println("word is not palindrome");
-        }
+//     public static void main(String[] args) {
+//         String str1 = "nitin";
+//         String str2 = str1.toLowerCase();
+//         char len[] = str2.toCharArray();
+//         boolean a = true;
+//         for (int i = 0; i < len.length; i++) {
+//             for (int j = len.length - 1; j > 0; j--) {
+//                 if (len[i] == len[j]) {
+//                     a = false;
+//                     break;
+//                 }
+//             }
+//         }
+//         if (a) {
+//             System.out.println("word is palindrome");
+//         } else {
+//             System.out.println("word is not palindrome");
+//         }
+//     }
+// }
+
+// import java.util.*;
+
+// public class tuf {
+
+//   public static void main(String args[]) {
+
+//     int arr1[] = { 2, 5, 1, 3, 0 };
+//     System.out.println("The smallest element in array is: " + sort(arr1));
+
+//     int arr2[] = { 8, 10, 5, 7, 9 };
+
+//     System.out.println(Arrays.toString(arr2));
+//     System.out.println("The smallest element in array is: " + sort(arr2));
+//   }
+
+//   static int sort(int arr[]) {
+
+//     for (int i = arr.length - 1; i >= 0; i--) {
+//       System.out.print(arr[i] + " ");
+//     }
+//     Arrays.sort(arr);
+//     return arr[0];
+//   }
+// }
+
+import java.util.*;
+
+class tuf {
+ 
+  public static void main(String[] args)  {
+    int n = 153;
+    // code here
+    int dump = n;
+    int number = 0;
+    while(n > 0){
+        int lastDigit = n % 10;
+        
+        number += (lastDigit*lastDigit*lastDigit);
+        n = n/10;
     }
+    System.out.println(n);
+    System.out.println(dump);
+    System.out.println(number);
+    if(dump == number){
+        System.out.println("true");
+    }
+
+    System.out.println("false");
+}
 }

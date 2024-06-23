@@ -27,9 +27,9 @@ public class Questions {
     }
 
     public static void main(String[] args) {
-        // System.out.println(question_1(3));
-        // question_2(43, 56);
-        // question_3(-4);
+        System.out.println(question_1(3));
+        question_2(43, 56);
+        question_3(-4);
         question_4();
 
     }

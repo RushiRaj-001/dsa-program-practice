@@ -1,5 +1,4 @@
 
-
 public class SubArrays {
     // brute force time complexity(n^3)
     // public static void Sub_Arrays_I(int numbers[]) {
@@ -57,27 +56,49 @@ public class SubArrays {
      * }
      */
 
-    public static void kadanes(int numbers[]) {
-        int max_sum = Integer.MIN_VALUE;
-        int curr_sum = 0;
+     static long kadanes(int arr[],int n) {
+        // int max_sum = Integer.MIN_VALUE;
+        // int curr_sum = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
-            curr_sum += numbers[i];
+        // for (int i = 0; i < arr.length; i++) {
+        // // curr_sum += numbers[i];
 
-            if(max_sum < curr_sum){
-                max_sum = curr_sum;
-            }
-            if (curr_sum < 0) {
-                curr_sum = 0;
-            }
-           
+        // // if(max_sum < curr_sum){
+        // // max_sum = curr_sum;
+        // // }
+        // // if (curr_sum < 0) {
+        // // curr_sum = 0; 
+        // // }
+
+        // curr_sum += arr[i];
+
+        // if(curr_sum > arr[i]){
+        // max_sum = curr_sum;
+        // }
+
+        // }
+        // System.out.println("max sum : " + max_sum);
+
+        int max_sum = arr[0];
+        int curr_sum = arr[0];
+        
+        // Iterate through the array starting from the second element
+        for (int i = 1; i < n; i++) {
+            // Update current sum by including current element or starting fresh from current element
+            curr_sum = Math.max(arr[i], curr_sum + arr[i]);
             
+            // Update the maximum sum found so far
+            max_sum = Math.max(max_sum, curr_sum);
         }
-        System.out.println("max sum : " + max_sum);
+        
+        return max_sum;
     }
 
+
     public static void main(String[] args) {
-        int[] numbers = { 2, 10, 5};
-        kadanes(numbers);
+        int[] numbers = { -10 - 2 - 3 - 4 };
+        int n = numbers.length;
+      
+        System.out.println(kadanes(numbers, n));
     }
 }

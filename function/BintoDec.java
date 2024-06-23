@@ -10,7 +10,6 @@ public class BintoDec {
             int lastDigit = binnum % 10;
 
             dec = dec + (lastDigit * (int) Math.pow(2, pow));
-
             pow++;
             binnum = binnum / 10;
 
