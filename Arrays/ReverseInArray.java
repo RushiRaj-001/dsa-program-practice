@@ -20,12 +20,26 @@ public class ReverseInArray {
 
         String numbers[] = { "rushi", "rajapure", "is", "boy" };
 
-        reverse(numbers);
+        // reverse(numbers);
         // for (int i : numbers) {
         // System.out.print(i + " ");
         // }
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+        // for (int i = 0; i < numbers.length; i++) {
+        // System.out.print(numbers[i] + " ");
+        // }
+
+        char arr[] = { 'a', 'b', 'c', 'd' };
+        int i = 0;
+        while (i < arr.length / 2) {
+        char temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+        i++;
         }
+
+        for (char c : arr) {
+        System.out.print(c + " ");
+        }
+    
     }
 }

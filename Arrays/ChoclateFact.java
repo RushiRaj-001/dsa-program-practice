@@ -23,6 +23,7 @@
 
 // 4 5 1 9 5 0 0 0
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ChoclateFact {
@@ -51,36 +52,71 @@ public class ChoclateFact {
         }
     }
 
-    public static void moveZero(int arr[]) {
+    // public static void moveZero(int arr[]) {
+    
 
-        int zeroPosition = 0;
+    // int zeroPosition = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                arr[zeroPosition] = arr[i];
-                zeroPosition++;
-            }
+    // for (int i = 0; i < arr.length; i++) {
+    // if (arr[i] != 0) {
+    // arr[zeroPosition] = arr[i];
+    // zeroPosition++;
+    // }
+    // }
+    // for (int i = zeroPosition; i < arr.length; i++) {
+    // arr[i] = 0;
+    // }
+    // }
+
+    static void moveZero(int arr[]) {
+    //     ArrayList<Integer> temp = new ArrayList<>(); 
+
+    //     for (int i = 0; i < arr.length; i++) {
+    //         if (arr[i] != 0) {
+    //            temp.add(arr[i]);
+    //         }
+    //     }
+    //   for(int i = 0; i < temp.size();i++){
+    //     arr[i] = temp.get(i);
+    //   }
+    //   for(int i=temp.size();i<arr.length;i++){
+    //     arr[i] = 0;
+    //   }
+
+    int j = -1;
+    for(int i = 0; i< arr.length;i++){
+        if(arr[i] == 0){
+            j = i;
+            break;
         }
-        for (int i = zeroPosition; i < arr.length; i++) {
-            arr[i] = 0;
+    }
+    for(int i = j+1;i<arr.length;i++){
+        if(arr[i] != 0){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            j++;
         }
+    }
+
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the length of Array : ");
-        int n = sc.nextInt();
+        // System.out.println("Enter the length of Array : ");
+        // int n = sc.nextInt();
 
-        int arr[] = new int[n];
+        int arr[] = { 1, 2, 3, 0, 4, 0, 0, 7, 3 };
 
-        System.out.println("Enter the elements.");
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-        }
+        // System.out.println("Enter the elements.");
+        // for (int i = 0; i < arr.length; i++) {
+        // arr[i] = sc.nextInt();
+        // }
         sc.close();
         moveZero(arr);
+        // moveZerosToEnd(arr);
 
         for (int i : arr) {
             System.out.print(i + " ");

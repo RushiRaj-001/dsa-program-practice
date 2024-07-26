@@ -28,6 +28,7 @@ public class practice {
 
 
         int row = 2 , column = 4;
+        
 
         int tran[][] = new int[column][row];
 

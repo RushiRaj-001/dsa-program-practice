@@ -7,7 +7,7 @@ public class Anagram {
     public static void main(String[] args) {
 
         String str1 = "race";
-        String str2 = "cBre";
+        String str2 = "cAre";
 
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();

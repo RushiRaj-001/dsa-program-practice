@@ -1,4 +1,4 @@
-package CharPattern;
+
 
 public class CharacterPattern {
 
