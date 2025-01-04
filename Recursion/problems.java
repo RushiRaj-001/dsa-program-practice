@@ -25,9 +25,10 @@ public class problems {
         if (x == 0) {
             return 1;
         }
-        // int fnm1 = x-1;
-        int fn = x * factorial(x - 1);
-        return fn;
+        // // int fnm1 = x-1;
+        // int fn = x * factorial(x - 1);
+        // return fn;
+        return x * factorial(x - 1);
     }
 
     static int sumOfN(int n) {
@@ -167,7 +168,7 @@ public class problems {
     public static void main(String[] args) {
         // decrease(20);
         // increase(20);
-        // System.out.println(factorial(5));
+        System.out.println(factorial(5));
         // System.out.println(sumOfN(5));
         System.out.println(fibonaci(10));
         // int arr[] = { 1, 2, 3, 10, 8, 3, 4, 5, 3, 3, 3 };

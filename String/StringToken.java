@@ -1,8 +1,10 @@
+package String;
+
 import java.io.*;
 import java.util.*;
 
 public class StringToken {
-
+    
     // Method to remove leading non-letter characters
     static String removeLeadingNonLetters(String s) {
         int i;

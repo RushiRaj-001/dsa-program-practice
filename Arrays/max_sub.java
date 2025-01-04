@@ -3,26 +3,34 @@ import java.util.ArrayList;
 public class max_sub {
 
     // Function to find maximum of each subarray of size k.
-    static void max_of_subarrays(int arr[], int n, int k) {
+    static int max_of_subarrays(int arr[], int n, int k) {
         // Your code here
-        for (int i = 0; i <= i + k - 1 && i < n; i++) {
+        int right = 0, left = 0;
+        int maxLength = 0;
+        int sum = arr[0];
 
-            int max = Integer.MIN_VALUE;
-            if (max < arr[i]) {
-                max = arr[i];
+        while (right < n) {
+            while (left <= right && sum > k) {
+                sum -= arr[left];
+                left++;
             }
-            // max_of_subarrays.add(max);
+            if (sum == k) {
+                maxLength = Math.max(maxLength, right - left + 1);
+            }
+            right++;
+            if (right < n) {
+                sum += arr[right];
+            }
         }
-
-        // for (int i : max_of_subarrays) {
-        // System.out.print(i + " ");
-        // }
+        return maxLength;
     }
 
     public static void main(String[] args) {
 
-        int arr[] = { 1, 2, 3, 1, 4, 5, 2, 3, 6 };
-
-        max_of_subarrays(arr, 9, 3);
+        // int arr[] = { 1, 2, 3, 1, 1, 1, 1, 3, 3 };
+        int arr[] = { 2, 0, 0, 0, 3 };
+        int n = arr.length;
+        int ans = max_of_subarrays(arr, n, 3);
+        System.out.println(ans);
     }
 }

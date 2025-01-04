@@ -1,11 +1,12 @@
 
+package String;
 
 public class palindrome {
     public static boolean isPalindrome(String str) {
 
-        str = str.replaceAll("[-+^:]*", ""); 
+        str = str.replaceAll("[-+^:]*", "");
         str = str.toLowerCase();
-        for (int i = 0; i < str.length()/2; i++) {
+        for (int i = 0; i < str.length() / 2; i++) {
             if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
                 return false;
             }
@@ -15,8 +16,8 @@ public class palindrome {
 
     public static void main(String[] args) {
         String str = "a";
-        
-        str = str.replaceAll("[^a-zA-Z0-9]", "");    
+
+        str = str.replaceAll("[^a-zA-Z0-9]", "");
         str = str.toLowerCase();
         Character.isLetterOrDigit(0);
 
